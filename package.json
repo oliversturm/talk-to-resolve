@@ -1,0 +1,36 @@
+{
+  "name": "talk-to-resolve",
+  "description": "Command line tool for developers to communicate with running reSolve applications",
+  "version": "0.1.0",
+  "bin": {
+    "ttr": "bin/ttr",
+    "talk-to-resolve": "bin/ttr"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oliversturm/talk-to-resolve.git"
+  },
+  "keywords": [
+    "reSolve",
+    "cli"
+  ],
+  "main": "client/index.js",
+  "license": "MIT",
+  "author": "Oliver Sturm <oliver@oliversturm.com>",
+  "bugs": {
+    "url": "https://github.com/oliversturm/talk-to-resolve/issues"
+  },
+  "homepage": "https://github.com/oliversturm/talk-to-resolve#readme",
+  "dependencies": {
+    "cardinal": "^2.1.1",
+    "chalk": "^2.4.2",
+    "fs-extra": "^8.1.0",
+    "homedir": "^0.6.0",
+    "isomorphic-fetch": "^2.2.1",
+    "jsonic": "^0.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
+    "table": "^5.4.6",
+    "vorpal": "^1.12.0"
+  }
+}
