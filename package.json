@@ -1,7 +1,7 @@
 {
   "name": "talk-to-resolve",
   "description": "Command line tool for developers to communicate with running reSolve applications",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "bin": {
     "ttr": "bin/ttr",
     "talk-to-resolve": "bin/ttr"
