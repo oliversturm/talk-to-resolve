@@ -88,4 +88,4 @@ const handler = (req, res, validateJwt) => {
   } else return commandHandlers[payload.command](req, res, payload);
 };
 
-export { handler as handleTtr };
+module.exports = { handleTtr: handler };
