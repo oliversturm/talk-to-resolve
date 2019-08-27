@@ -80,7 +80,11 @@ module.exports = (vorpal, state) => {
         id
       }).then(result => {
         if (result) {
-          context.log(highlight(JSON.stringify(result)));
+          result.sort();
+          const table = createTable(result, [
+            { caption: 'Resolver', width: 40 }
+          ]);
+          context.log(table);
         }
         cb();
       });

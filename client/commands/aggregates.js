@@ -14,7 +14,25 @@ module.exports = (vorpal, state) => {
         command: 'aggregate-list'
       }).then(result => {
         if (result) {
-          context.log(highlight(JSON.stringify(result)));
+          const table = createTable(result, [
+            {
+              name: 'name',
+              caption: 'Aggregate Name',
+              width: 25
+            },
+            {
+              name: 'isSystemAggregate',
+              caption: 'System',
+              width: 6,
+              processing: [
+                { type: 'toBool' },
+                { type: 'markProblem', pred: b => b }
+              ]
+            },
+            { name: 'commands', width: 8, alignment: 'right' }
+          ]);
+
+          context.log(table);
         }
         cb();
       });
@@ -29,7 +47,11 @@ module.exports = (vorpal, state) => {
         name
       }).then(result => {
         if (result) {
-          context.log(highlight(JSON.stringify(result)));
+          result.sort();
+          const table = createTable(result, [
+            { caption: 'Command', width: 40 }
+          ]);
+          context.log(table);
         }
         cb();
       });

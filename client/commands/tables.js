@@ -11,7 +11,8 @@ const processors = {
   highlight: () => s => highlight(s),
   default: () => s => s,
   markProblem: ({ pred }) => s => (pred && pred(s) ? chalk.red(s) : s),
-  readableTime: () => s => new Date(s).toLocaleString()
+  readableTime: () => s => new Date(s).toLocaleString(),
+  toBool: () => v => !!v
 };
 
 const processingPipe = p => {
@@ -58,7 +59,7 @@ const createTable = (json, fieldConfig) => {
         .map(x => chalk.bold(x));
       for (const row of json) {
         yield fieldConfig.map(({ name, processing }) =>
-          processingPipe(processing)(row[name])
+          processingPipe(processing)(name ? row[name] : row)
         );
       }
     })(json)
