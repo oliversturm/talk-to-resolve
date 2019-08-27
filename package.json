@@ -32,5 +32,8 @@
     "lodash": "^4.17.15",
     "table": "^5.4.6",
     "vorpal": "^1.12.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.2.2"
   }
 }

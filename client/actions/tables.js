@@ -39,10 +39,12 @@ const createFieldConfig = json => {
   }));
 };
 
-const createTable = (json, fieldConfig) => {
-  if (!Array.isArray(json)) return createTable([json], fieldConfig);
+const createTable = () => ({ output }) => (json, fieldConfig) => {
+  if (!Array.isArray(json))
+    return createTable()({ output })([json], fieldConfig);
   if (json.length === 0) return '';
-  if (!fieldConfig) return createTable(json, createFieldConfig(json));
+  if (!fieldConfig)
+    return createTable()({ output })(json, createFieldConfig(json));
   const config = {
     columns: fieldConfig.reduce(
       (r, { width, alignment }, index) => ({
@@ -64,7 +66,15 @@ const createTable = (json, fieldConfig) => {
       }
     })(json)
   );
-  return table(data, config);
+  try {
+    return table(data, config);
+  } catch (e) {
+    output(
+      chalk.red(
+        'The result set has two many columns to display in tabular format. Consider using --json.'
+      )
+    );
+  }
 };
 
 module.exports = { createTable };
