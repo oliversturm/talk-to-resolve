@@ -58,7 +58,7 @@ Include the `ttr` call in your `package.json`:
 
 ```json
 "scripts": {
-  ...
+  //...
   "ttr": "ttr"
 }
 ```
