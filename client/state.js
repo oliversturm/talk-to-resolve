@@ -1,26 +1,13 @@
 const chalk = require('chalk');
+const EventEmitter = require('events');
 
 module.exports = () => {
   let jwtSecret = null;
-
-  const setJwtSecret = secret => {
-    jwtSecret = secret;
-  };
-
   let serviceUrl = null;
-
-  const setServiceUrl = url => {
-    serviceUrl = url;
-  };
-
   let tokenTemplate = JSON.stringify({
     id: 'talk-to-resolve',
     roles: ['$ttr']
   });
-
-  const setTokenTemplate = template => {
-    tokenTemplate = template;
-  };
 
   const stateOk = () => !!jwtSecret && !!serviceUrl && !!tokenTemplate;
 
@@ -52,6 +39,27 @@ module.exports = () => {
   const isStateSaveable = () => !!jwtSecret && !!serviceUrl && !!tokenTemplate;
   const getSaveableState = () =>
     isStateSaveable() ? { jwtSecret, serviceUrl, tokenTemplate } : null;
+
+  const events = new EventEmitter();
+  const promptChanged = () => {
+    events.emit('prompt changed', prompt());
+  };
+  const onPromptChanged = f => events.on('prompt changed', f);
+
+  const setJwtSecret = secret => {
+    jwtSecret = secret;
+    promptChanged();
+  };
+
+  const setServiceUrl = url => {
+    serviceUrl = url;
+    promptChanged();
+  };
+
+  const setTokenTemplate = template => {
+    tokenTemplate = template;
+  };
+
   const loadState = ({
     jwtSecret: secret,
     serviceUrl: url,
@@ -72,6 +80,7 @@ module.exports = () => {
     loadState,
     stateOk,
     getState,
-    setTokenTemplate
+    setTokenTemplate,
+    onPromptChanged
   };
 };
