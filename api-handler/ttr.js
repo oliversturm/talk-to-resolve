@@ -29,28 +29,32 @@ const readModelQueryHandler = (req, res, { id, resolver, resolverArgs }) =>
       res.json(result);
     });
 
-const readModelShowResolversHandler = (req, res, { id }) => {
-  const readModel = req.resolve.readModels.find(({ name }) => name === id);
-  const resolverNames = Object.getOwnPropertyNames(readModel.resolvers);
-  res.json(resolverNames);
-};
+const readModelShowResolversHandler = (req, res, { id }) =>
+  Promise.resolve(req.resolve.readModels.find(({ name }) => name === id))
+    .then(readModel => Object.getOwnPropertyNames(readModel.resolvers))
+    .then(resolverNames => {
+      res.json(resolverNames);
+    });
 
 const getAggregateCommands = agg => Object.getOwnPropertyNames(agg.commands);
 
-const aggregateListHandler = (req, res) => {
-  res.json(
+const aggregateListHandler = (req, res) =>
+  Promise.resolve(
     req.resolve.aggregates.map(agg => ({
       name: agg.name,
       isSystemAggregate: agg.isSystemAggregate,
       commands: getAggregateCommands(agg).length
     }))
-  );
-};
+  ).then(list => {
+    res.json(list);
+  });
 
-const aggregateShowCommandsHandler = (req, res, { name }) => {
-  const aggregate = req.resolve.aggregates.find(({ name: n }) => n === name);
-  res.json(getAggregateCommands(aggregate));
-};
+const aggregateShowCommandsHandler = (req, res, { name }) =>
+  Promise.resolve(req.resolve.aggregates.find(({ name: n }) => n === name))
+    .then(getAggregateCommands)
+    .then(cmds => {
+      res.json(cmds);
+    });
 
 const eventsLoadHandler = (
   req,
@@ -85,6 +89,7 @@ const handler = (req, res, validateJwt) => {
   const payload = JSON.parse(req.body);
   if (!payload || !payload.command || !commandHandlers[payload.command]) {
     res.status(400);
+    return Promise.resolve();
   } else return commandHandlers[payload.command](req, res, payload);
 };
 
