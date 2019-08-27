@@ -14,7 +14,11 @@ const actions = {
   configSave: require('./config-save'),
   configSetJwtSecret: require('./config-set-jwt-secret'),
   configSetServiceUrl: require('./config-set-service-url'),
-  configSetTokenTemplate: require('./config-set-token-template')
+  configSetTokenTemplate: require('./config-set-token-template'),
+  aggregateShow: require('./aggregate-show'),
+  aggregateShowCommands: require('./aggregate-show-commands'),
+  aggregateExecuteCommand: require('./aggregate-execute-command'),
+  eventsShow: require('./events-show')
 };
 
 const vorpalAction = ({ rootActions }) => f =>

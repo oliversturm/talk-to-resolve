@@ -1,9 +1,9 @@
 const vorpal = require('vorpal')();
 const state = require('./state')();
-const configCommands = require('./commands/config');
-const readModelCommands = require('./commands/read-models');
-// const aggregateCommands = require('./commands/aggregates');
-// const eventCommands = require('./commands/events');
+const configCommands = require('./vorpal-commands/config');
+const readModelCommands = require('./vorpal-commands/read-models');
+const aggregateCommands = require('./vorpal-commands/aggregates');
+const eventCommands = require('./vorpal-commands/events');
 const { vorpalActions } = require('./actions');
 
 process.on('uncaughtException', err => {
@@ -20,8 +20,8 @@ vorpal
   .history('ttr')
   .use(configCommands, actions)
   .use(readModelCommands, actions)
-  // .use(aggregateCommands, state)
-  // .use(eventCommands, state)
+  .use(aggregateCommands, actions)
+  .use(eventCommands, actions)
   .delimiter(state.prompt());
 
 state.onPromptChanged(p => vorpal.delimiter(p));
