@@ -65,7 +65,7 @@ Include `ttr` as a script in your `package.json`:
 }
 ```
 
-This enables you to run the client using `yarn ttr` or `npm run ttr`. Run `ttr -h` for information on the support command line arguments.
+This enables you to run the client using `yarn ttr` or `npm run ttr`. Run `ttr -h` for information on the supported command line arguments.
 
 ### Configuring The Client
 
