@@ -11,7 +11,8 @@ const configSave = ({ state }) => ({
     const sectionName = name || 'default';
 
     return fs
-      .readJSON(configFile)
+      .exists(configFile)
+      .then(exists => (exists ? fs.readJSON(configFile) : Promise.resolve({})))
       .then(config =>
         configOutputFile(
           configFile,
