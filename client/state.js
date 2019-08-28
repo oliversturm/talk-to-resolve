@@ -58,6 +58,7 @@ module.exports = () => {
 
   const setTokenTemplate = template => {
     tokenTemplate = template;
+    promptChanged();
   };
 
   const loadState = ({

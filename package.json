@@ -24,8 +24,10 @@
   "dependencies": {
     "cardinal": "^2.1.1",
     "chalk": "^2.4.2",
+    "commander": "^3.0.0",
     "fs-extra": "^8.1.0",
     "homedir": "^0.6.0",
+    "inquirer": "^7.0.0",
     "isomorphic-fetch": "^2.2.1",
     "jsonic": "^0.3.1",
     "jsonwebtoken": "^8.5.1",

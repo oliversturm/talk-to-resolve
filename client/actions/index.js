@@ -1,3 +1,5 @@
+const inquirer = require('inquirer');
+
 const actions = {
   contactService: require('./contact-service'),
   postCommand: require('./post-command'),
@@ -49,4 +51,49 @@ const vorpalActions = state => {
   return captureActions;
 };
 
-module.exports = { vorpalActions };
+const commanderAction = ({ rootActions }) => f =>
+  function(...args) {
+    const [cmd] = args.slice(-1);
+    const params = cmd._args.reduce(
+      (r, v, i) => ({ ...r, [v.name]: args[i] }),
+      {}
+    );
+    params.options = cmd.options.reduce((r, v) => {
+      // for option '-r, --remove', v.short has '-r' and v.long has '--remove'
+      //   value is cmd.remove
+      // for option '-r', v.short is undefined and v.long has '-r'
+      //   value is cmd.R
+      // for option '--remove', v.short is undefined and v.long has '--remove'
+      //   value is cmd.remove
+      const optionName = v.long.replace(/^-+/, '');
+      const shortOption = optionName.length === 1;
+      return {
+        ...r,
+        [optionName]: cmd[shortOption ? optionName.toUpperCase() : optionName]
+      };
+    }, {});
+
+    // We assume that only one of these top-level actions is
+    // run when using the commander interface, so calling this
+    // here is fine - otherwise we'd need to make sure somehow
+    // that configLoad is done just once.
+    const load = cmd.parent.load;
+    return rootActions.configLoad({ name: load }).then(() => f(params));
+  };
+
+const commanderActions = state => {
+  const captureActions = {};
+  for (const key in actions)
+    captureActions[key] = actions[key]({ state, rootActions: captureActions })({
+      output: console.log,
+      prompt: inquirer.prompt,
+      actions: captureActions
+    });
+  captureActions.commanderAction = commanderAction({
+    state,
+    rootActions: captureActions
+  });
+  return captureActions;
+};
+
+module.exports = { vorpalActions, commanderActions };
