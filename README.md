@@ -69,37 +69,9 @@ This enables you to run the client using `yarn ttr` or `npm run ttr`. Run `ttr -
 
 ### Configuring The Client
 
-Run `ttr` without any arguments to bring up the interactive environment. Use the `config` command to see the current configuration:
+Run `ttr` without any arguments to bring up the interactive environment. Use the `config` command to see the current configuration and configure the _JWT Secret_ and _Service URL_ values depending on your setup:
 
-```shell
-TTR [JWT Secret not set] [Service URL not set] > config
-
-  TTR Config
-
-  JWT Secret = 'null'
-  Service URL = null
-  Token template = {"id":"talk-to-resolve","roles":["$ttr"]}
-
-TTR [JWT Secret not set] [Service URL not set] >
-```
-
-Configure the _JWT Secret_ and _Service URL_ values depending on your setup:
-
-```shell
-TTR [JWT Secret not set] [Service URL not set] > config set jwt secret 'the secret my running app uses'
-JWT Secret set to 'the secret my running app uses'
-TTR [Service URL not set] > config set service url http://localhost:3000
-Service URL set to http://localhost:3000
-TTR > config
-
-  TTR Config
-
-  JWT Secret = 'the secret my running app uses'
-  Service URL = http://localhost:3000
-  Token template = {"id":"talk-to-resolve","roles":["$ttr"]}
-
-TTR >
-```
+<script id="asciicast-gZgmdFXBCfuH2J70i2KsAORX5" src="https://asciinema.org/a/gZgmdFXBCfuH2J70i2KsAORX5.js?autoplay=1;preload=1;loop=1;cols=100;rows=25" async></script>
 
 Configure the token template according to the token structure your application uses, as well as the token validation logic you included in your API handler. For instance, assuming you use a `roles` field like the sample code does, you could include additional roles:
 
