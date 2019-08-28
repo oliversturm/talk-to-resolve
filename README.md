@@ -71,7 +71,7 @@ This enables you to run the client using `yarn ttr` or `npm run ttr`. Run `ttr -
 
 Run `ttr` without any arguments to bring up the interactive environment. Use the `config` command to see the current configuration and configure the _JWT Secret_ and _Service URL_ values depending on your setup:
 
-<script id="asciicast-gZgmdFXBCfuH2J70i2KsAORX5" src="https://asciinema.org/a/gZgmdFXBCfuH2J70i2KsAORX5.js?autoplay=1;preload=1;loop=1;cols=100;rows=25" async></script>
+![Config Command](docs/images/ttr-config.svg)
 
 Configure the token template according to the token structure your application uses, as well as the token validation logic you included in your API handler. For instance, assuming you use a `roles` field like the sample code does, you could include additional roles:
 
