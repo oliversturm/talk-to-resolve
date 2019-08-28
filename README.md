@@ -1,5 +1,7 @@
 # talk-to-resolve - TTR
 
+[![npm version](https://badge.fury.io/js/talk-to-resolve.svg)](https://badge.fury.io/js/talk-to-resolve) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/oliversturm/talk-to-resolve/blob/master/LICENSE)
+
 An interactive debugging environment that talks to your running [reSolve](https://github.com/reimagined/resolve/) application.
 
 ## Getting Started
