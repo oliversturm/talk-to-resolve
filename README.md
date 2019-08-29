@@ -4,7 +4,7 @@
 
 An interactive debugging environment that talks to your running [reSolve](https://github.com/reimagined/resolve/) application.
 
-![Demo Animation](./docs/images/hackernews.svg?v=2)
+![Demo Animation](./docs/images/hackernews.svg)
 
 ## Getting Started
 
