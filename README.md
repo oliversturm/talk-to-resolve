@@ -4,7 +4,7 @@
 
 An interactive debugging environment that talks to your running [reSolve](https://github.com/reimagined/resolve/) application.
 
-![Demo Animation](https://raw.githubusercontent.com/oliversturm/talk-to-resolve/readme/docs/images/hackernews.svg)
+![Demo Animation](./docs/images/hackernews.svg)
 
 ## Getting Started
 
