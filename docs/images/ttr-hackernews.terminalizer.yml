@@ -1,0 +1,714 @@
+# The configurations that used for the recording, feel free to edit them
+config:
+
+  # Specify a command to be executed
+  # like `/bin/bash -l`, `ls`, or any other commands
+  # the default is bash for Linux
+  # or powershell.exe for Windows
+  command: ../../bin/ttr -l hackernews
+  
+  # Specify the current working directory path
+  # the default is the current working directory path
+  cwd: /home/sturm/git/talk-to-resolve/docs/images
+  
+  # Export additional ENV variables
+  env:
+    recording: true
+  
+  # Explicitly set the number of columns
+  # or use `auto` to take the current
+  # number of columns of your shell
+  cols: 102
+  
+  # Explicitly set the number of rows
+  # or use `auto` to take the current
+  # number of rows of your shell
+  rows: 25 
+  
+  # Amount of times to repeat GIF
+  # If value is -1, play once
+  # If value is 0, loop indefinitely
+  # If value is a positive number, loop n times
+  repeat: 0
+  
+  # Quality
+  # 1 - 100
+  quality: 100
+  
+  # Delay between frames in ms
+  # If the value is `auto` use the actual recording delays
+  frameDelay: auto
+  
+  # Maximum delay between frames in ms
+  # Ignored if the `frameDelay` isn't set to `auto`
+  # Set to `auto` to prevent limiting the max idle time
+  maxIdleTime: 2000
+  
+  # The surrounding frame box
+  # The `type` can be null, window, floating, or solid`
+  # To hide the title use the value null
+  # Don't forget to add a backgroundColor style with a null as type
+  frameBox:
+    type: floating
+    title: TTR Hacker News Sample
+    style:
+      border: 0px black solid
+      boxShadow: 0 0 2px 2px grey
+      margin: 8px
+      backgroundColor: "#002B36"
+  
+  # Add a watermark image to the rendered gif
+  # You need to specify an absolute path for
+  # the image on your machine or a URL, and you can also
+  # add your own CSS styles
+  watermark:
+    imagePath: null
+    style:
+      position: absolute
+      right: 15px
+      bottom: 15px
+      width: 100px
+      opacity: 0.9
+  
+  # Cursor style can be one of
+  # `block`, `underline`, or `bar`
+  cursorStyle: block
+  
+  # Font family
+  # You can use any font that is installed on your machine
+  # in CSS-like syntax
+  fontFamily: "Fira Code Retina"
+  
+  # The size of the font
+  fontSize: 13
+  
+  # The height of lines
+  lineHeight: 1
+  
+  # The spacing between letters
+  letterSpacing: 0.5
+  
+  # Theme
+  theme:
+    background: "#002B36"
+    foreground: "#afafaf"
+    cursor: "#c7c7c7"
+    black: "#232628"
+    red: "#fc4384"
+    green: "#b3e33b"
+    yellow: "#ffa727"
+    blue: "#75dff2"
+    magenta: "#ae89fe"
+    cyan: "#708387"
+    white: "#d5d5d0"
+    brightBlack: "#626566"
+    brightRed: "#ff7fac"
+    brightGreen: "#c8ed71"
+    brightYellow: "#ebdf86"
+    brightBlue: "#75dff2"
+    brightMagenta: "#ae89fe"
+    brightCyan: "#b1c6ca"
+    brightWhite: "#f9f9f4"
+  
+# Records, feel free to edit them
+records:
+  - delay: 660
+    content: "\e[32mConfig 'hackernews' loaded from /home/sturm/.ttr.config.json\e[39m\r\n"
+  - delay: 142
+    content: "\e[32mTTR >\e[39m \e[6D\e[6C"
+  - delay: 1358
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m c\e[7D\e[7C"
+  - delay: 94
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m co\e[8D\e[8C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m con\e[9D\e[9C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m conf\e[10D\e[10C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m confi\e[11D\e[11C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m config\e[12D\e[12C"
+  - delay: 103
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m \e[36mconfig\e[39m\e[12D\e[12C\r\n"
+  - delay: 5
+    content: "\r\n  \e[1mTTR Config\e[22m\r\n\r\n  \e[32mJWT Secret = 'SECRETJWT'\e[39m\r\n  \e[32mService URL = http://localhost:3000\e[39m\r\n  \e[32mToken template = {\"id\":\"talk-to-resolve\",\"name\":\"TTR\",\"roles\":[\"$ttr\"]}\e[39m\r\n\r\n\e[32mTTR >\e[39m \e[6D\e[6C"
+  - delay: 1229
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m r\e[7D\e[7C"
+  - delay: 98
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m re\e[8D\e[8C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m rea\e[9D\e[9C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read\e[10D\e[10C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-\e[11D\e[11C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-m\e[12D\e[12C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-mo\e[13D\e[13C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-mod\e[14D\e[14C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-mode\e[15D\e[15C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model\e[16D\e[16C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model \e[17D\e[17C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model s\e[18D\e[18C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model st\e[19D\e[19C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model sta\e[20D\e[20C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model stat\e[21D\e[21C"
+  - delay: 99
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model statu\e[22D\e[22C"
+  - delay: 104
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model status\e[23D\e[23C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m \e[36mread-model status\e[39m\e[23D\e[23C\r\n"
+  - delay: 44
+    content: "╔══════════════╤════════════╤══════════════════════╤═════════════════════════════════════════════════╗\r\n║ \e[1mListener Id\e[22m  │ \e[1mStatus\e[22m     │ \e[1mLast Error\e[22m           │ \e[1mLast Event\e[22m                                      ║\r\n╟──────────────┼────────────┼──────────────────────┼─────────────────────────────────────────────────╢\r\n║ HackerNews   │ running    │ null                 │ \e[33m{\e[39m\e[32m\"type\"\e[39m\e[93m:\e[39m\e[92m\"Init\"\e[39m\e[33m}\e[39m                                 ║\r\n╟──────────────┼────────────┼──────────────────────┼─────────────────────────────────────────────────╢\r\n║ Search       │ running    │ null                 │ \e[33m{\e[39m\e[32m\"type\"\e[39m\e[93m:\e[39m\e[92m\"Init\"\e[39m\e[33m}\e[39m                                 ║\r\n╟──────────────┼────────────┼──────────────────────┼─────────────────────────────────────────────────╢\r\n║ Comments     │ running    │ null                 │ \e[33m{\e[39m\e[32m\"type\"\e[39m\e[93m:\e[39m\e[92m\"Init\"\e[39m\e[33m}\e[39m                                 ║\r\n╟──────────────┼────────────┼──────────────────────┼─────────────────────────────────────────────────╢\r\n║ UserConfirma │ running    │ null                 │ \e[33m{\e[39m\e[32m\"type\"\e[39m\e[93m:\e[39m\e[92m\"Init\"\e[39m\e[33m}\e[39m                                 ║\r\n║ tion         │            │                      │                                                 ║\r\n╟──────────────┼────────────┼──────────────────────┼─────────────────────────────────────────────────╢\r\n║ scheduler    │ running    │ null                 │ \e[33m{\e[39m\e[32m\"type\"\e[39m\e[93m:\e[39m\e[92m\"Init\"\e[39m\e[33m}\e[39m                                 ║\r\n╚══════════════╧════════════╧══════════════════════╧═════════════════════════════════════════════════╝\r\n\r\n\e[32mTTR >\e[39m \e[6D\e[6C"
+  - delay: 1502
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m a\e[7D\e[7C"
+  - delay: 92
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m ag\e[8D\e[8C"
+  - delay: 103
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m agg\e[9D\e[9C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggr\e[10D\e[10C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggre\e[11D\e[11C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggreg\e[12D\e[12C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggrega\e[13D\e[13C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregat\e[14D\e[14C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate\e[15D\e[15C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate \e[16D\e[16C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate s\e[17D\e[17C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate sh\e[18D\e[18C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate sho\e[19D\e[19C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate show\e[20D\e[20C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m \e[36maggregate show\e[39m\e[20D\e[20C\r\n"
+  - delay: 9
+    content: "╔═══════════════════════════╤════════╤══════════╗\r\n║ \e[1mAggregate Name\e[22m            │ \e[1mSystem\e[22m │ \e[1mCommands\e[22m ║\r\n╟───────────────────────────┼────────┼──────────╢\r\n║ scheduler                 │ \e[31mtrue\e[39m   │        4 ║\r\n╟───────────────────────────┼────────┼──────────╢\r\n║ Story                     │ false  │        3 ║\r\n╟───────────────────────────┼────────┼──────────╢\r\n║ User                      │ false  │        3 ║\r\n╟───────────────────────────┼────────┼──────────╢\r\n║ Comment                   │ false  │        3 ║\r\n╚═══════════════════════════╧════════╧══════════╝\r\n\r\n\e[32mTTR >\e[39m \e[6D\e[6C"
+  - delay: 1522
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m a\e[7D\e[7C"
+  - delay: 93
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m ag\e[8D\e[8C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m agg\e[9D\e[9C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggr\e[10D\e[10C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggre\e[11D\e[11C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggreg\e[12D\e[12C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggrega\e[13D\e[13C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregat\e[14D\e[14C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate\e[15D\e[15C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate \e[16D\e[16C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate s\e[17D\e[17C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate sh\e[18D\e[18C"
+  - delay: 98
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate sho\e[19D\e[19C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate show\e[20D\e[20C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate show \e[21D\e[21C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate show c\e[22D\e[22C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate show co\e[23D\e[23C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate show com\e[24D\e[24C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate show comm\e[25D\e[25C"
+  - delay: 99
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate show comma\e[26D\e[26C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate show comman\e[27D\e[27C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate show command\e[28D\e[28C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate show commands\e[29D\e[29C"
+  - delay: 98
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate show commands \e[30D\e[30C"
+  - delay: 104
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate show commands S\e[31D\e[31C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate show commands St\e[32D\e[32C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate show commands Sto\e[33D\e[33C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate show commands Stor\e[34D\e[34C"
+  - delay: 98
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate show commands Story\e[35D\e[35C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m \e[36maggregate show commands Story\e[39m\e[35D\e[35C\r\n"
+  - delay: 8
+    content: "╔══════════════════════════════════════════╗\r\n║ \e[1mCommand\e[22m                                  ║\r\n╟──────────────────────────────────────────╢\r\n║ createStory                              ║\r\n╟──────────────────────────────────────────╢\r\n║ unvoteStory                              ║\r\n╟──────────────────────────────────────────╢\r\n║ upvoteStory                              ║\r\n╚══════════════════════════════════════════╝\r\n\r\n\e[32mTTR >\e[39m \e[6D\e[6C"
+  - delay: 1027
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m a\e[7D\e[7C"
+  - delay: 99
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m ag\e[8D\e[8C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m agg\e[9D\e[9C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggr\e[10D\e[10C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggre\e[11D\e[11C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggreg\e[12D\e[12C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggrega\e[13D\e[13C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregat\e[14D\e[14C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate\e[15D\e[15C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate \e[16D\e[16C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate e\e[17D\e[17C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate ex\e[18D\e[18C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate exe\e[19D\e[19C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate exec\e[20D\e[20C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execu\e[21D\e[21C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execut\e[22D\e[22C"
+  - delay: 103
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute\e[23D\e[23C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute \e[24D\e[24C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute c\e[25D\e[25C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute co\e[26D\e[26C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute com\e[27D\e[27C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute comm\e[28D\e[28C"
+  - delay: 105
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute comma\e[29D\e[29C"
+  - delay: 99
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute comman\e[30D\e[30C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command\e[31D\e[31C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command \e[32D\e[32C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command S\e[33D\e[33C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command St\e[34D\e[34C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Sto\e[35D\e[35C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Stor\e[36D\e[36C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story\e[37D\e[37C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story \e[38D\e[38C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story s\e[39D\e[39C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story st\e[40D\e[40C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story sto\e[41D\e[41C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story stor\e[42D\e[42C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story\e[43D\e[43C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-\e[44D\e[44C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1\e[45D\e[45C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 \e[46D\e[46C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 c\e[47D\e[47C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 cr\e[48D\e[48C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 cre\e[49D\e[49C"
+  - delay: 99
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 crea\e[50D\e[50C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 creat\e[51D\e[51C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 create\e[52D\e[52C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createS\e[53D\e[53C"
+  - delay: 99
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createSt\e[54D\e[54C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createSto\e[55D\e[55C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStor\e[56D\e[56C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory\e[57D\e[57C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory \e[58D\e[58C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory t\e[59D\e[59C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory ti\e[60D\e[60C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory tit\e[61D\e[61C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory titl\e[62D\e[62C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title\e[63D\e[63C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title:\e[64D\e[64C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: \e[65D\e[65C"
+  - delay: 103
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: V\e[66D\e[66C"
+  - delay: 103
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Ve\e[67D\e[67C"
+  - delay: 97
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Ver\e[68D\e[68C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very\e[69D\e[69C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very \e[70D\e[70C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very C\e[71D\e[71C"
+  - delay: 99
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Co\e[72D\e[72C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Coo\e[73D\e[73C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool\e[74D\e[74C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool \e[75D\e[75C"
+  - delay: 103
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool N\e[76D\e[76C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool Ne\e[77D\e[77C"
+  - delay: 98
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool New\e[78D\e[78C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News\e[79D\e[79C"
+  - delay: 103
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News,\e[80D\e[80C"
+  - delay: 98
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, \e[81D\e[81C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, t\e[82D\e[82C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, te\e[83D\e[83C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, tex\e[84D\e[84C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text\e[85D\e[85C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text:\e[86D\e[86C"
+  - delay: 99
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: \e[87D\e[87C"
+  - delay: 103
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: H\e[88D\e[88C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: Ha\e[89D\e[89C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: Hac\e[90D\e[90C"
+  - delay: 107
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: Hack\e[91D\e[91C"
+  - delay: 94
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: Hacke\e[92D\e[92C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: Hacker\e[93D\e[93C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: Hacker \e[94D\e[94C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: Hacker N\e[95D\e[95C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: Hacker Ne\e[96D\e[96C"
+  - delay: 99
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: Hacker New\e[97D\e[97C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: Hacker News\e[98D\e[98C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: Hacker News \e[99D\e[99C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: Hacker News t\e[100D\e[100C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: Hacker News ta\e[101D\e[101C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: Hacker News tal\r\n \e[1D\e[0C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[1A\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: Hacker News talk\e[1D\e[1C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[1A\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: Hacker News talks\e[2D\e[2C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[1A\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: Hacker News talks \e[3D\e[3C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[1A\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: Hacker News talks t\e[4D\e[4C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[1A\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: Hacker News talks to\e[5D\e[5C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[1A\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: Hacker News talks to \e[6D\e[6C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[1A\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: Hacker News talks to d\e[7D\e[7C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[1A\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: Hacker News talks to de\e[8D\e[8C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[1A\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: Hacker News talks to dev\e[9D\e[9C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[1A\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: Hacker News talks to deve\e[10D\e[10C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[1A\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: Hacker News talks to devel\e[11D\e[11C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[1A\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: Hacker News talks to develo\e[12D\e[12C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[1A\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: Hacker News talks to develop\e[13D\e[13C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[1A\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: Hacker News talks to develope\e[14D\e[14C"
+  - delay: 99
+    content: "\e[1000D\e[K\e[1A\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: Hacker News talks to developer\e[15D\e[15C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[1A\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: Hacker News talks to developers\e[16D\e[16C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[1A\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: Hacker News talks to developers,\e[17D\e[17C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[1A\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: Hacker News talks to developers, \e[18D\e[18C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[1A\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: Hacker News talks to developers, l\e[19D\e[19C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[1A\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: Hacker News talks to developers, li\e[20D\e[20C"
+  - delay: 99
+    content: "\e[1000D\e[K\e[1A\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: Hacker News talks to developers, lin\e[21D\e[21C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[1A\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: Hacker News talks to developers, link\e[22D\e[22C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[1A\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: Hacker News talks to developers, link:\e[23D\e[23C"
+  - delay: 99
+    content: "\e[1000D\e[K\e[1A\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: Hacker News talks to developers, link: \e[24D\e[24C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[1A\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: Hacker News talks to developers, link: n\e[25D\e[25C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[1A\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: Hacker News talks to developers, link: nu\e[26D\e[26C"
+  - delay: 99
+    content: "\e[1000D\e[K\e[1A\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: Hacker News talks to developers, link: nul\e[27D\e[27C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[1A\e[1000D\e[K\e[32mTTR >\e[39m aggregate execute command Story story-1 createStory title: Very Cool News, text: Hacker News talks to developers, link: null\e[28D\e[28C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[1A\e[1000D\e[K\e[32mTTR >\e[39m \e[36maggregate execute command Story story-1 createStory title: Very Cool News, text: Hacker News talks to developers, link: null\e[39m\e[1A\e[28D\e[130C\r\n"
+  - delay: 41
+    content: "\e[32mTTR >\e[39m \e[6D\e[6C"
+  - delay: 952
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m r\e[7D\e[7C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m re\e[8D\e[8C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m rea\e[9D\e[9C"
+  - delay: 99
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read\e[10D\e[10C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-\e[11D\e[11C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-m\e[12D\e[12C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-mo\e[13D\e[13C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-mod\e[14D\e[14C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-mode\e[15D\e[15C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model\e[16D\e[16C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model \e[17D\e[17C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model s\e[18D\e[18C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model st\e[19D\e[19C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model sta\e[20D\e[20C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model stat\e[21D\e[21C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model statu\e[22D\e[22C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model status\e[23D\e[23C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m \e[36mread-model status\e[39m\e[23D\e[23C\r\n"
+  - delay: 35
+    content: "╔══════════════╤════════════╤══════════════════════╤═════════════════════════════════════════════════╗\r\n║ \e[1mListener Id\e[22m  │ \e[1mStatus\e[22m     │ \e[1mLast Error\e[22m           │ \e[1mLast Event\e[22m                                      ║\r\n╟──────────────┼────────────┼──────────────────────┼─────────────────────────────────────────────────╢\r\n║ HackerNews   │ running    │ null                 │ \e[33m{\e[39m\e[32m\"timestamp\"\e[39m\e[93m:\e[39m\e[34m1567161508875\e[39m\e[32m,\e[39m\e[32m\"aggregateId\"\e[39m\e[93m:\e[39m\e[92m\"story\e[39m ║\r\n║              │            │                      │ \e[92m-1\"\e[39m\e[32m,\e[39m\e[32m\"aggregateVersion\"\e[39m\e[93m:\e[39m\e[34m1\e[39m\e[32m,\e[39m\e[32m\"type\"\e[39m\e[93m:\e[39m\e[92m\"StoryCreated\"\e[39m\e[32m,\e[39m\e[32m\e[39m ║\r\n║              │            │                      │ \e[32m\e[39m\e[32m\"payload\"\e[39m\e[93m:\e[39m\e[33m{\e[39m\e[32m\"title\"\e[39m\e[93m:\e[39m\e[92m\"Very Cool News\"\e[39m\e[32m,\e[39m\e[32m\"text\"\e[39m\e[93m:\e[39m\e[92m\"Hac\e[39m ║\r\n║              │            │                      │ \e[92mker News talks to developers\"\e[39m\e[32m,\e[39m\e[32m\"link\"\e[39m\e[93m:\e[39m\e[90mnull\e[39m\e[32m,\e[39m\e[32m\"user\e[39m ║\r\n║              │            │                      │ \e[32mId\"\e[39m\e[93m:\e[39m\e[92m\"talk-to-resolve\"\e[39m\e[32m,\e[39m\e[32m\"userName\"\e[39m\e[93m:\e[39m\e[92m\"TTR\"\e[39m\e[33m}\e[39m\e[33m}\e[39m        ║\r\n╟──────────────┼────────────┼──────────────────────┼─────────────────────────────────────────────────╢\r\n║ Search       │ running    │ null                 │ \e[33m{\e[39m\e[32m\"timestamp\"\e[39m\e[93m:\e[39m\e[34m1567161508875\e[39m\e[32m,\e[39m\e[32m\"aggregateId\"\e[39m\e[93m:\e[39m\e[92m\"story\e[39m ║\r\n║              │            │                      │ \e[92m-1\"\e[39m\e[32m,\e[39m\e[32m\"aggregateVersion\"\e[39m\e[93m:\e[39m\e[34m1\e[39m\e[32m,\e[39m\e[32m\"type\"\e[39m\e[93m:\e[39m\e[92m\"StoryCreated\"\e[39m\e[32m,\e[39m\e[32m\e[39m ║\r\n║              │            │                      │ \e[32m\e[39m\e[32m\"payload\"\e[39m\e[93m:\e[39m\e[33m{\e[39m\e[32m\"title\"\e[39m\e[93m:\e[39m\e[92m\"Very Cool News\"\e[39m\e[32m,\e[39m\e[32m\"text\"\e[39m\e[93m:\e[39m\e[92m\"Hac\e[39m ║\r\n║              │            │                      │ \e[92mker News talks to developers\"\e[39m\e[32m,\e[39m\e[32m\"link\"\e[39m\e[93m:\e[39m\e[90mnull\e[39m\e[32m,\e[39m\e[32m\"user\e[39m ║\r\n║              │            │                      │ \e[32mId\"\e[39m\e[93m:\e[39m\e[92m\"talk-to-resolve\"\e[39m\e[32m,\e[39m\e[32m\"userName\"\e[39m\e[93m:\e[39m\e[92m\"TTR\"\e[39m\e[33m}\e[39m\e[33m}\e[39m        ║\r\n╟──────────────┼────────────┼──────────────────────┼─────────────────────────────────────────────────╢\r\n║ Comments     │ running    │ null                 │ \e[33m{\e[39m\e[32m\"type\"\e[39m\e[93m:\e[39m\e[92m\"Init\"\e[39m\e[33m}\e[39m                                 ║\r\n╟──────────────┼────────────┼──────────────────────┼─────────────────────────────────────────────────╢\r\n║ UserConfirma │ running    │ null                 │ \e[33m{\e[39m\e[32m\"type\"\e[39m\e[93m:\e[39m\e[92m\"Init\"\e[39m\e[33m}\e[39m                                 ║\r\n║ tion         │            │                      │                                                 ║\r\n╟──────────────┼────────────┼──────────────────────┼─────────────────────────────────────────────────╢\r\n║ scheduler    │ running    │ null                 │ \e[33m{\e[39m\e[32m\"type\"\e[39m\e[93m:\e[39m\e[92m\"Init\"\e[39m\e[33m}\e[39m                                 ║\r\n╚══════════════╧════════════╧══════════════════════╧═════════════════════════════════════════════════╝\r\n\r\n\e[32mTTR >\e[39m \e[6D\e[6C"
+  - delay: 2526
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m r\e[7D\e[7C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m re\e[8D\e[8C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m rea\e[9D\e[9C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read\e[10D\e[10C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-\e[11D\e[11C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-m\e[12D\e[12C"
+  - delay: 99
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-mo\e[13D\e[13C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-mod\e[14D\e[14C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-mode\e[15D\e[15C"
+  - delay: 99
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model\e[16D\e[16C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model \e[17D\e[17C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model s\e[18D\e[18C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model sh\e[19D\e[19C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model sho\e[20D\e[20C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model show\e[21D\e[21C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model show \e[22D\e[22C"
+  - delay: 99
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model show r\e[23D\e[23C"
+  - delay: 103
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model show re\e[24D\e[24C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model show res\e[25D\e[25C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model show reso\e[26D\e[26C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model show resol\e[27D\e[27C"
+  - delay: 98
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model show resolv\e[28D\e[28C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model show resolve\e[29D\e[29C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model show resolver\e[30D\e[30C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model show resolvers\e[31D\e[31C"
+  - delay: 99
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model show resolvers \e[32D\e[32C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model show resolvers H\e[33D\e[33C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model show resolvers Ha\e[34D\e[34C"
+  - delay: 98
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model show resolvers Hac\e[35D\e[35C"
+  - delay: 103
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model show resolvers Hack\e[36D\e[36C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model show resolvers Hacke\e[37D\e[37C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model show resolvers Hacker\e[38D\e[38C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model show resolvers HackerN\e[39D\e[39C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model show resolvers HackerNe\e[40D\e[40C"
+  - delay: 98
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model show resolvers HackerNew\e[41D\e[41C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model show resolvers HackerNews\e[42D\e[42C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m \e[36mread-model show resolvers HackerNews\e[39m\e[42D\e[42C\r\n"
+  - delay: 5
+    content: "╔══════════════════════════════════════════╗\r\n║ \e[1mResolver\e[22m                                 ║\r\n╟──────────────────────────────────────────╢\r\n║ allStories                               ║\r\n╟──────────────────────────────────────────╢\r\n║ askStories                               ║\r\n╟──────────────────────────────────────────╢\r\n║ showStories                              ║\r\n╟──────────────────────────────────────────╢\r\n║ story                                    ║\r\n╟──────────────────────────────────────────╢\r\n║ user                                     ║\r\n╚══════════════════════════════════════════╝\r\n\r\n\e[32mTTR >\e[39m \e[6D\e[6C"
+  - delay: 1169
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m r\e[7D\e[7C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m re\e[8D\e[8C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m rea\e[9D\e[9C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read\e[10D\e[10C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-\e[11D\e[11C"
+  - delay: 99
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-m\e[12D\e[12C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-mo\e[13D\e[13C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-mod\e[14D\e[14C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-mode\e[15D\e[15C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model\e[16D\e[16C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model \e[17D\e[17C"
+  - delay: 99
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model q\e[18D\e[18C"
+  - delay: 103
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model qu\e[19D\e[19C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model que\e[20D\e[20C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model quer\e[21D\e[21C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model query\e[22D\e[22C"
+  - delay: 99
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model query \e[23D\e[23C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model query H\e[24D\e[24C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model query Ha\e[25D\e[25C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model query Hac\e[26D\e[26C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model query Hack\e[27D\e[27C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model query Hacke\e[28D\e[28C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model query Hacker\e[29D\e[29C"
+  - delay: 103
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model query HackerN\e[30D\e[30C"
+  - delay: 98
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model query HackerNe\e[31D\e[31C"
+  - delay: 105
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model query HackerNew\e[32D\e[32C"
+  - delay: 97
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model query HackerNews\e[33D\e[33C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model query HackerNews \e[34D\e[34C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model query HackerNews a\e[35D\e[35C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model query HackerNews al\e[36D\e[36C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model query HackerNews all\e[37D\e[37C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model query HackerNews allS\e[38D\e[38C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model query HackerNews allSt\e[39D\e[39C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model query HackerNews allSto\e[40D\e[40C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model query HackerNews allStor\e[41D\e[41C"
+  - delay: 100
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model query HackerNews allStori\e[42D\e[42C"
+  - delay: 99
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model query HackerNews allStorie\e[43D\e[43C"
+  - delay: 102
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m read-model query HackerNews allStories\e[44D\e[44C"
+  - delay: 101
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m \e[36mread-model query HackerNews allStories\e[39m\e[44D\e[44C\r\n"
+  - delay: 19
+    content: "╔═════════╤═════════╤═════════╤═════════╤═════════╤═════════╤═════════╤═════════╤═════════╤═════════╗\r\n║ \e[1mTitle\e[22m   │ \e[1mText\e[22m    │ \e[1mLink\e[22m    │ \e[1mComment\e[22m │ \e[1mVotes\e[22m   │ \e[1mCreated\e[22m │ \e[1mCreated\e[22m │ \e[1mCreated\e[22m │ \e[1mId\e[22m      │ \e[1mType\e[22m    ║\r\n║         │         │         │ \e[1m Count\e[22m  │         │ \e[1m At\e[22m     │ \e[1m By\e[22m     │ \e[1m By Nam\e[22m │         │         ║\r\n║         │         │         │         │         │         │         │ \e[1me\e[22m       │         │         ║\r\n╟─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────╢\r\n║ \e[92m\"Very C\e[39m │ \e[92m\"Hacker\e[39m │ \e[92m\"\"\e[39m      │ \e[34m0\e[39m       │ \e[33m[\e[39m\e[33m]\e[39m      │ \e[34m1567161\e[39m │ \e[92m\"talk-t\e[39m │ \e[92m\"TTR\"\e[39m   │ \e[92m\"story-\e[39m │ \e[92m\"ask\"\e[39m   ║\r\n║ \e[92mool New\e[39m │ \e[92m News t\e[39m │         │         │         │ \e[34m508875\e[39m  │ \e[92mo-resol\e[39m │         │ \e[92m1\"\e[39m      │         ║\r\n║ \e[92ms\"\e[39m      │ \e[92malks to\e[39m │         │         │         │         │ \e[92mve\"\e[39m     │         │         │         ║\r\n║         │ \e[92m develo\e[39m │         │         │         │         │         │         │         │         ║\r\n║         │ \e[92mpers\"\e[39m   │         │         │         │         │         │         │         │         ║\r\n╚═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╝\r\n\r\n\e[32mTTR >\e[39m \e[6D\e[6C"
+  - delay: 3148
+    content: "\e[1000D\e[K\e[32mTTR >\e[39m \e[6D\e[6C\r\n\r\n"

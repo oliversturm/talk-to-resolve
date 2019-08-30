@@ -1,2 +1,7 @@
-- Record size 1440x776, 102x25 terminal size
-- Convert using `ffmpeg -i ttr-hackernews.mp4 -vf "scale=700:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -r 10 ttr-hackernews.gif`
+Recording with terminalizer is much easier and prettier. Optimizing the image for a reasonable filesize is harder though.
+
+- `terminalizer record -c ./terminalizer-config.yml ttr-hackernews.terminalizer`
+- `terminalizer render ttr-hackernews.terminalizer.yml -o ttr-hackernews-orig.gif`
+- optimize in gimp
+- `gifsicle -O3 --lossy=90 --colors=256 -o ttr-hackernews.gif ttr-hackernews.gimp-optimized.gif`
+
