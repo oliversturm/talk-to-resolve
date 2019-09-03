@@ -20,6 +20,7 @@ const actions = {
   aggregateShow: require('./aggregate-show'),
   aggregateShowCommands: require('./aggregate-show-commands'),
   aggregateExecuteCommand: require('./aggregate-execute-command'),
+  aggregateExecuteCommands: require('./aggregate-execute-commands'),
   eventsShow: require('./events-show')
 };
 
