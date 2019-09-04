@@ -12,16 +12,14 @@ const aggregateExecuteCommands = () => ({
     .readJSON(fileName)
     .then(cmds => {
       const count = cmds.length;
-      output(chalk.green(`Found ${count} commands`));
+      output(`Found ${count} commands`);
       let process = null;
       if (options.last) {
         process = _.takeRight(options.last);
         output(
-          chalk.green(
-            `Using commands ${count -
-              options.last +
-              1}-${count} from the end of the file`
-          )
+          `Using commands ${count -
+            options.last +
+            1}-${count} from the end of the file`
         );
       } else if (options.skip || options.take) {
         process = _.compose([
@@ -29,11 +27,9 @@ const aggregateExecuteCommands = () => ({
           _.drop(options.skip || 0)
         ]);
         output(
-          chalk.green(
-            `Using commands ${(options.skip || 0) + 1}-${
-              options.take ? (options.skip || 0) + options.take + 1 : count
-            }`
-          )
+          `Using commands ${(options.skip || 0) + 1}-${
+            options.take ? (options.skip || 0) + options.take : count
+          }`
         );
       }
       return (process && process(cmds)) || cmds;
@@ -66,6 +62,7 @@ const aggregateExecuteCommands = () => ({
         ).then(res => {
           clearInterval(pulseInterval);
           gauge.hide();
+          output(`Executed ${cmds.length} commands`);
           return res;
         });
       } else return Promise.resolve();
