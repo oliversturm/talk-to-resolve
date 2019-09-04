@@ -142,11 +142,28 @@ Configuration commands are only supported in the interactive environment.
 
 #### Aggregate Commands
 
-| Interactive                                                                          | Command Line                                                        | Comments                                                                                                              |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `aggregate show`                                                                     | `agg`                                                               | Show all aggregates                                                                                                   |
-| `aggregate show commands <name>`                                                     | `agg-show <name>`                                                   | List commands implemented for the aggregate                                                                           |
-| `aggregate execute command <aggregateName> <aggregateId> <command> <payloadJson...>` | `agg-exec <aggregateName> <aggregateId> <command> <payloadJson...>` | Execute a for the specified aggregate. Use [relaxed JSON syntax](https://github.com/rjrodger/jsonic) for the payload. |
+| Interactive                                                                          | Command Line                                                        | Comments                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `aggregate show`                                                                     | `agg`                                                               | Show all aggregates                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `aggregate show commands <name>`                                                     | `agg-show <name>`                                                   | List commands implemented for the aggregate                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| `aggregate execute command <aggregateName> <aggregateId> <command> <payloadJson...>` | `agg-exec <aggregateName> <aggregateId> <command> <payloadJson...>` | Execute a command for the specified aggregate. Use [relaxed JSON syntax](https://github.com/rjrodger/jsonic) for the payload.                                                                                                                                                                                                                                                                                                                                                         |
+| `aggregate execute commands <fileName>`                                              | `agg-exec-file <fileName>`                                          | Execute a sequence of commands loaded from a file (see below for structure).<br>Options are supported:<br>`--last <n>` uses only the last n commands from the file<br>`--skip <n>` skips the first n commands from the start of the file<br>`--take <n>` uses n commands from the start, taking _skip_ into account<br>`--showCommands` displays the commands that will be executed<br>`--testRun` loads the commands taking other options into account, but doesn't execute anything |
+
+**Command File Structure**
+
+Command files are expected to contain a JSON array of objects with four properties:
+
+```js
+[
+  {
+    "aggregateName": "... name of the aggregate ...",
+    "aggregateId": "... ID of the aggregate ...",
+    "command": "... name of the command...",
+    "payload": { ... command payload object ... }
+  },
+  ... further commands
+]
+```
 
 #### Read Model Commands
 

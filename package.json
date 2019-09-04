@@ -22,10 +22,12 @@
   },
   "homepage": "https://github.com/oliversturm/talk-to-resolve#readme",
   "dependencies": {
+    "bluebird": "^3.5.5",
     "cardinal": "^2.1.1",
     "chalk": "^2.4.2",
     "commander": "^3.0.0",
     "fs-extra": "^8.1.0",
+    "gauge": "^2.7.4",
     "homedir": "^0.6.0",
     "inquirer": "^7.0.0",
     "isomorphic-fetch": "^2.2.1",
