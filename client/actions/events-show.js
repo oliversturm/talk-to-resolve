@@ -1,25 +1,27 @@
 const { getJsonValue } = require('./json');
 
-const getTimestamp = ts => (typeof ts === 'string' ? Date.parse(ts) : ts);
+const getTimestamp = (ts) => (typeof ts === 'string' ? Date.parse(ts) : ts);
 // make sure the string has [ ] around it
-const prepareListString = s =>
+const prepareListString = (s) =>
   s.replace(/^(\s*[^\s[])/, '[$1').replace(/([^\]\s]\s*)$/, '$1]');
-const getList = json =>
+const getList = (json) =>
   json ? getJsonValue(prepareListString(json)) : Promise.resolve(undefined);
 
 const eventsShow = () => ({
   output,
-  actions: { contactService, outputFile, outputJson, createTable }
+  actions: { contactService, outputFile, outputJson, createTable },
 }) => ({ options }) => {
   const payload = { command: 'events-load' };
 
   const start = Promise.all([
     getList(options.aggregateIds),
     getList(options.eventTypes),
-    Promise.resolve(getTimestamp(options.startTime)),
-    Promise.resolve(getTimestamp(options.endTime))
+    Promise.resolve(getTimestamp(options.startTime || 0)),
+    Promise.resolve(getTimestamp(options.endTime || 0)),
   ]);
 
+  // todo: must make sure that startTime, finishTime and limit have sensible
+  // defaults - the current implementation does not work with fallbacks
   return start
     .then(([aggregateIds, eventTypes, startTime, finishTime]) =>
       contactService({
@@ -27,10 +29,11 @@ const eventsShow = () => ({
         aggregateIds,
         eventTypes,
         startTime,
-        finishTime
+        finishTime,
+        limit: 10,
       })
     )
-    .then(json => {
+    .then((json) => {
       if (json) {
         if (options.file) {
           return outputFile(options.file, json);
@@ -42,13 +45,13 @@ const eventsShow = () => ({
             {
               name: 'timestamp',
               width: 13,
-              processing: options.humanReadable ? 'readableTime' : undefined
+              processing: options.humanReadable ? 'readableTime' : undefined,
             },
             {
               name: 'aggregateVersion',
               caption: 'Agg/V',
               width: 5,
-              alignment: 'right'
+              alignment: 'right',
             },
             { name: 'type', width: 30 },
             {
@@ -58,8 +61,8 @@ const eventsShow = () => ({
                 4 /* left and right table margins */ -
                 (5 - 1) * 3 /* vertical spacers between fields */ -
                 (36 + 13 + 5 + 30) /* widths of other columns */,
-              processing: [{ type: 'stringify' }, { type: 'highlight' }]
-            }
+              processing: [{ type: 'stringify' }, { type: 'highlight' }],
+            },
           ]);
           output(table);
         }

@@ -1,36 +1,36 @@
 const readModelStatus = () => ({
   output,
-  actions: { contactService, createTable }
+  actions: { contactService, createTable },
 }) => ({ id }) => {
   const payload = id
     ? { command: 'read-model-status', id }
     : { command: 'read-model-status-all' };
-  return contactService(payload).then(json => {
+  return contactService(payload).then((json) => {
     if (json) {
       const table = createTable(json, [
-        { name: 'listenerId', width: 12 },
+        { name: 'eventSubscriber', caption: 'Name', width: 12 },
         {
           name: 'status',
           width: 10,
-          processing: [{ type: 'markProblem', pred: s => s !== 'running' }]
+          processing: [{ type: 'markProblem', pred: (s) => s !== 'deliver' }],
         },
         {
-          name: 'lastError',
+          name: 'failedEvent',
           width: 20,
           processing: [
             { type: ['stringify'] },
-            { type: 'markProblem', pred: s => s !== 'null' }
-          ]
+            { type: 'markProblem', pred: (s) => s !== 'null' },
+          ],
         },
         {
-          name: 'lastEvent',
+          name: 'successEvent',
           width:
             process.stdout.columns -
             4 /* left and right table margins */ -
             (4 - 1) * 3 /* vertical spacers between fields */ -
             (12 + 10 + 20) /* widths of other columns */,
-          processing: [{ type: 'stringify' }, { type: 'highlight' }]
-        }
+          processing: [{ type: 'stringify' }, { type: 'highlight' }],
+        },
       ]);
       output(table);
     }

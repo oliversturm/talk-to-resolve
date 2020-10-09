@@ -7,6 +7,7 @@ module.exports = (commander, actions) => {
   commander
     .command('agg-cmds <name>')
     .description('Show aggregate commands')
+    .option('-v, --verbose', 'Include command code')
     .action(actions.commanderAction(actions.aggregateShowCommands));
 
   commander

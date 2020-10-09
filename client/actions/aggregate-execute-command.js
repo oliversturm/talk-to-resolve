@@ -4,11 +4,11 @@ const aggregateExecuteCommand = () => ({ actions: { postCommand } }) => ({
   aggregateName,
   aggregateId,
   command,
-  payloadJson
+  payloadJson,
 }) => {
   const start = payloadJson ? getJsonValue(payloadJson) : Promise.resolve({});
-  return start.then(payload =>
-    postCommand(aggregateName, aggregateId, command, payload)
+  return start.then((payload) =>
+    postCommand(aggregateName, aggregateId.toString(), command, payload)
   );
 };
 

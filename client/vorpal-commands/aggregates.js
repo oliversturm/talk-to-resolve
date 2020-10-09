@@ -5,6 +5,7 @@ module.exports = (vorpal, actions) => {
 
   vorpal
     .command('aggregate show commands <name>', 'Show aggregate commands')
+    .option('-v, --verbose', 'Include command code')
     .action(actions.vorpalAction(actions.aggregateShowCommands));
 
   vorpal
