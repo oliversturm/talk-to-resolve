@@ -1,24 +1,28 @@
 module.exports = (commander, actions) => {
-  commander
-    .command('agg')
-    .description('Show all aggregates')
-    .action(actions.commanderAction(actions.aggregateShow));
+  const aggregate = commander.command('aggregate').alias('agg').alias('a');
 
-  commander
-    .command('agg-cmds <name>')
-    .description('Show aggregate commands')
+  aggregate
+    .command('list')
+    .alias('l')
+    .description('List known aggregates')
+    .action(actions.commanderAction(actions.aggregateList));
+
+  aggregate
+    .command('commands <aggregateName>')
+    .alias('c')
+    .description('List aggregate commands')
     .option('-v, --verbose', 'Include command code')
-    .action(actions.commanderAction(actions.aggregateShowCommands));
+    .action(actions.commanderAction(actions.aggregateListCommands));
 
-  commander
-    .command(
-      'agg-exec <aggregateName> <aggregateId> <command> <payloadJson...>'
-    )
+  aggregate
+    .command('exec <aggregateName> <aggregateId> <command> <payloadJson...>')
+    .alias('x')
     .description('Execute aggregate command')
     .action(actions.commanderAction(actions.aggregateExecuteCommand));
 
-  commander
-    .command('agg-exec-file <fileName>')
+  aggregate
+    .command('exec-file <fileName>')
+    .alias('xf')
     .description('Execute aggregate commands from a file')
     .option('-l, --last <number>', 'Execute only the last <number> items')
     .option('-s, --skip <number>', 'Skip <number> commands from the start')

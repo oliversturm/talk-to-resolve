@@ -1,16 +1,16 @@
-const aggregateShow = () => ({
+const aggregateList = () => ({
   output,
-  actions: { contactService, createTable }
+  actions: { contactService, createTable },
 }) => () =>
   contactService({
-    command: 'aggregate-list'
-  }).then(result => {
+    command: 'aggregate-list',
+  }).then((result) => {
     if (result) {
       const table = createTable(result, [
         {
           name: 'name',
           caption: 'Aggregate Name',
-          width: 25
+          width: 25,
         },
         {
           name: 'isSystemAggregate',
@@ -18,14 +18,14 @@ const aggregateShow = () => ({
           width: 6,
           processing: [
             { type: 'toBool' },
-            { type: 'markProblem', pred: b => b }
-          ]
+            { type: 'markProblem', pred: (b) => b },
+          ],
         },
-        { name: 'commands', width: 8, alignment: 'right' }
+        { name: 'commands', width: 8, alignment: 'right' },
       ]);
 
       output(table);
     }
   });
 
-module.exports = aggregateShow;
+module.exports = aggregateList;

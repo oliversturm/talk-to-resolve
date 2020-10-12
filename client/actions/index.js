@@ -17,43 +17,43 @@ const actions = {
   configSetJwtSecret: require('./config-set-jwt-secret'),
   configSetServiceUrl: require('./config-set-service-url'),
   configSetTokenTemplate: require('./config-set-token-template'),
-  aggregateShow: require('./aggregate-show'),
-  aggregateShowCommands: require('./aggregate-show-commands'),
+  aggregateList: require('./aggregate-list'),
+  aggregateListCommands: require('./aggregate-list-commands'),
   aggregateExecuteCommand: require('./aggregate-execute-command'),
   aggregateExecuteCommands: require('./aggregate-execute-commands'),
-  eventsShow: require('./events-show')
+  eventsShow: require('./events-show'),
 };
 
-const vorpalAction = ({ rootActions }) => f =>
-  function(args, cb) {
+const vorpalAction = ({ rootActions }) => (f) =>
+  function (args, cb) {
     const { log, prompt } = this;
     const captureActions = {};
     const param = {
       output: log.bind(this),
       prompt: prompt.bind(this),
-      actions: captureActions
+      actions: captureActions,
     };
     for (const key in rootActions)
       captureActions[key] = rootActions[key](param);
-    return f(param)(args).then(res => {
+    return f(param)(args).then((res) => {
       cb();
       return res;
     });
   };
 
-const vorpalActions = state => {
+const vorpalActions = (state) => {
   const captureActions = {};
   for (const key in actions)
     captureActions[key] = actions[key]({ state, rootActions: captureActions });
   captureActions.vorpalAction = vorpalAction({
     state,
-    rootActions: captureActions
+    rootActions: captureActions,
   });
   return captureActions;
 };
 
-const commanderAction = ({ rootActions }) => f =>
-  function(...args) {
+const commanderAction = ({ rootActions }) => (f) =>
+  function (...args) {
     const [cmd] = args.slice(-1);
     const params = cmd._args.reduce(
       (r, v, i) => ({ ...r, [v.name]: args[i] }),
@@ -70,7 +70,7 @@ const commanderAction = ({ rootActions }) => f =>
       const shortOption = optionName.length === 1;
       return {
         ...r,
-        [optionName]: cmd[shortOption ? optionName.toUpperCase() : optionName]
+        [optionName]: cmd[shortOption ? optionName.toUpperCase() : optionName],
       };
     }, {});
 
@@ -82,17 +82,17 @@ const commanderAction = ({ rootActions }) => f =>
     return rootActions.configLoad({ name: load }).then(() => f(params));
   };
 
-const commanderActions = state => {
+const commanderActions = (state) => {
   const captureActions = {};
   for (const key in actions)
     captureActions[key] = actions[key]({ state, rootActions: captureActions })({
       output: console.log,
       prompt: inquirer.prompt,
-      actions: captureActions
+      actions: captureActions,
     });
   captureActions.commanderAction = commanderAction({
     state,
-    rootActions: captureActions
+    rootActions: captureActions,
   });
   return captureActions;
 };

@@ -1,10 +1,10 @@
-const aggregateShowCommands = () => ({
+const aggregateListCommands = () => ({
   output,
   actions: { contactService, createTable },
-}) => ({ name, options = {} }) =>
+}) => ({ aggregateName, options = {} }) =>
   contactService({
-    command: 'aggregate-show-commands',
-    name,
+    command: 'aggregate-list-commands',
+    aggregateName,
     verbose: options.verbose,
   }).then((result) => {
     if (result) {
@@ -28,4 +28,4 @@ const aggregateShowCommands = () => ({
     }
   });
 
-module.exports = aggregateShowCommands;
+module.exports = aggregateListCommands;

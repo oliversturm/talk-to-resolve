@@ -58,8 +58,10 @@ const aggregateListHandler = (req, res) =>
     res.json(list);
   });
 
-const aggregateShowCommandsHandler = (req, res, { name, verbose }) =>
-  Promise.resolve(req.resolve.aggregates.find(({ name: n }) => n === name))
+const aggregateListCommandsHandler = (req, res, { aggregateName, verbose }) =>
+  Promise.resolve(
+    req.resolve.aggregates.find(({ name: n }) => n === aggregateName)
+  )
     .then(getAggregateCommands(verbose))
     .then((cmds) => {
       res.json(cmds);
@@ -83,7 +85,7 @@ const commandHandlers = {
   'list-properties': listPropertiesHandler,
   'read-model-show-resolvers': readModelShowResolversHandler,
   'aggregate-list': aggregateListHandler,
-  'aggregate-show-commands': aggregateShowCommandsHandler,
+  'aggregate-list-commands': aggregateListCommandsHandler,
   'events-load': eventsLoadHandler,
 };
 

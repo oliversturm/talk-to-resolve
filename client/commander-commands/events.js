@@ -1,6 +1,8 @@
 module.exports = (commander, actions) => {
   commander
-    .command('ev')
+    .command('events')
+    .alias('ev')
+    .alias('e')
     .description(
       'Show events. Defaults to maximum 100 events in the last 7 days.'
     )

@@ -1,23 +1,23 @@
 module.exports = (vorpal, actions) => {
   vorpal
-    .command('aggregate show', 'Show all aggregates')
-    .action(actions.vorpalAction(actions.aggregateShow));
+    .command('aggregate list', 'List known aggregates')
+    .action(actions.vorpalAction(actions.aggregateList));
 
   vorpal
-    .command('aggregate show commands <name>', 'Show aggregate commands')
+    .command('aggregate commands <aggregateName>', 'List aggregate commands')
     .option('-v, --verbose', 'Include command code')
-    .action(actions.vorpalAction(actions.aggregateShowCommands));
+    .action(actions.vorpalAction(actions.aggregateListCommands));
 
   vorpal
     .command(
-      'aggregate execute command <aggregateName> <aggregateId> <command> <payloadJson...>',
+      'aggregate execute <aggregateName> <aggregateId> <command> <payloadJson...>',
       'Execute aggregate command'
     )
     .action(actions.vorpalAction(actions.aggregateExecuteCommand));
 
   vorpal
     .command(
-      'aggregate execute commands <fileName>',
+      'aggregate execute-file <fileName>',
       'Execute aggregate commands from a file'
     )
     .option('-l, --last <number>', 'Execute only the last <number> items')

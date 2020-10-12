@@ -1,16 +1,24 @@
 module.exports = (commander, actions) => {
-  commander
-    .command('rm-status [id]')
+  const rm = commander
+    .command('read-model')
+    .alias('rm')
+    .alias('readmodel')
+    .alias('r');
+
+  rm.command('status [id]')
+    .alias('s')
     .description('Show status of one or all read models')
     .action(actions.commanderAction(actions.readModelStatus));
 
-  commander
-    .command('rm-props <id>')
+  rm.command('properties <id>')
+    .alias('props')
+    .alias('p')
     .description('Show read model properties')
     .action(actions.commanderAction(actions.readModelShowProperties));
 
-  commander
-    .command('rm-res <id>')
+  rm.command('resolvers <id>')
+    .alias('res')
+    .alias('r')
     .description('Show read model resolvers')
     .action(actions.commanderAction(actions.readModelShowResolvers));
 
