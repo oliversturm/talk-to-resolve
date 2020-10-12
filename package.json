@@ -22,22 +22,22 @@
   },
   "homepage": "https://github.com/oliversturm/talk-to-resolve#readme",
   "dependencies": {
-    "bluebird": "^3.5.5",
+    "bluebird": "^3.7.2",
     "cardinal": "^2.1.1",
-    "chalk": "^2.4.2",
-    "commander": "^3.0.0",
-    "fs-extra": "^8.1.0",
-    "gauge": "^2.7.4",
+    "chalk": "^4.1.0",
+    "commander": "^6.1.0",
+    "fs-extra": "^9.0.1",
+    "gauge": "^3.0.0",
     "homedir": "^0.6.0",
-    "inquirer": "^7.0.0",
-    "isomorphic-fetch": "^2.2.1",
-    "jsonic": "^0.3.1",
+    "inquirer": "^7.3.3",
+    "isomorphic-fetch": "^3.0.0",
+    "jsonic": "^1.0.1",
     "jsonwebtoken": "^8.5.1",
-    "lodash": "^4.17.15",
-    "table": "^5.4.6",
+    "lodash": "^4.17.20",
+    "table": "^6.0.3",
     "vorpal": "^1.12.0"
   },
   "devDependencies": {
-    "eslint": "^6.2.2"
+    "eslint": "^7.11.0"
   }
 }
