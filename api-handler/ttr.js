@@ -40,10 +40,10 @@ const readModelShowResolversHandler = (req, res, { id }) =>
       res.json(resolverNames);
     });
 
-const getAggregateCommands = (agg) => {
+const getAggregateCommands = (verbose) => (agg) => {
   return Object.getOwnPropertyNames(agg.commands).map((command) => ({
     command,
-    decoded: agg.commands[command].toString(),
+    decoded: verbose ? agg.commands[command].toString() : '',
   }));
 };
 
@@ -60,7 +60,7 @@ const aggregateListHandler = (req, res) =>
 
 const aggregateShowCommandsHandler = (req, res, { name, verbose }) =>
   Promise.resolve(req.resolve.aggregates.find(({ name: n }) => n === name))
-    .then(getAggregateCommands)
+    .then(getAggregateCommands(verbose))
     .then((cmds) => {
       res.json(cmds);
     });
@@ -69,20 +69,12 @@ const eventsLoadHandler = (
   req,
   res,
   { eventTypes, aggregateIds, startTime, finishTime, limit }
-) => {
-  const events = [];
-  const handler = (o) => {
-    events.push(o);
-  };
-  return req.resolve.eventStore
-    .loadEvents(
-      { eventTypes, aggregateIds, startTime, finishTime, limit },
-      handler
-    )
-    .then(() => {
+) =>
+  req.resolve.eventStore
+    .loadEvents({ eventTypes, aggregateIds, startTime, finishTime, limit })
+    .then(({ events }) => {
       res.json(events);
     });
-};
 
 const commandHandlers = {
   'read-model-status-all': readModelStatusAllHandler,

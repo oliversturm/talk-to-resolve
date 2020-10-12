@@ -1,7 +1,9 @@
 module.exports = (commander, actions) => {
   commander
     .command('ev')
-    .description('Show events')
+    .description(
+      'Show events. Defaults to maximum 100 events in the last 7 days.'
+    )
     .option(
       '-a, --aggregateIds <aggregateIdsJson>',
       'Filter for  aggregate ids'
@@ -15,6 +17,7 @@ module.exports = (commander, actions) => {
       '-e, --endTime <endTime>',
       'Filter for events with timestamp < endTime. Use numeric timestamp or string understood by Date.parse().'
     )
+    .option('-l, --limit <limit>', 'Retrieve at most <limit> events')
     .option(
       '-h, --humanReadable',
       'Convert timestamps to readable values in tabular output'

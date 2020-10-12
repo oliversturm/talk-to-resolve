@@ -13,11 +13,13 @@ const eventsShow = () => ({
 }) => ({ options }) => {
   const payload = { command: 'events-load' };
 
+  const now = Date.now();
+
   const start = Promise.all([
     getList(options.aggregateIds),
     getList(options.eventTypes),
-    Promise.resolve(getTimestamp(options.startTime || 0)),
-    Promise.resolve(getTimestamp(options.endTime || 0)),
+    Promise.resolve(getTimestamp(options.startTime || now - 7 * 86400000)),
+    Promise.resolve(getTimestamp(options.endTime || now)),
   ]);
 
   // todo: must make sure that startTime, finishTime and limit have sensible
@@ -30,7 +32,7 @@ const eventsShow = () => ({
         eventTypes,
         startTime,
         finishTime,
-        limit: 10,
+        limit: options.limit || 100,
       })
     )
     .then((json) => {

@@ -1,6 +1,9 @@
 module.exports = (vorpal, actions) => {
   vorpal
-    .command('events show', 'Show events')
+    .command(
+      'events show',
+      'Show events. Defaults to maximum 100 events in the last 7 days.'
+    )
     .option(
       '-a, --aggregateIds <aggregateIdsJson>',
       'Filter for  aggregate ids'
@@ -14,6 +17,7 @@ module.exports = (vorpal, actions) => {
       '-e, --endTime <endTime>',
       'Filter for events with timestamp < endTime. Use numeric timestamp or string understood by Date.parse().'
     )
+    .option('-l, --limit <limit>', 'Retrieve at most <limit> events')
     .option(
       '-h, --humanReadable',
       'Convert timestamps to readable values in tabular output'
