@@ -14,11 +14,12 @@ const readModelStatus = () => ({
           width: 10,
           processing: [{ type: 'markProblem', pred: (s) => s !== 'deliver' }],
         },
+        { name: 'eventTypes', width: 15, processing: ['multiLineString'] },
         {
           name: 'failedEvent',
           width: 20,
           processing: [
-            { type: ['stringify'] },
+            { type: 'stringify' },
             { type: 'markProblem', pred: (s) => s !== 'null' },
           ],
         },
@@ -27,8 +28,8 @@ const readModelStatus = () => ({
           width:
             process.stdout.columns -
             4 /* left and right table margins */ -
-            (4 - 1) * 3 /* vertical spacers between fields */ -
-            (12 + 10 + 20) /* widths of other columns */,
+            (4 - 1) * 4 /* vertical spacers between fields */ -
+            (12 + 10 + 15 + 20) /* widths of other columns */,
           processing: [{ type: 'stringify' }, { type: 'highlight' }],
         },
       ]);

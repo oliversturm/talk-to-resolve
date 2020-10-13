@@ -14,6 +14,26 @@ const readModelStatusHandler = (req, res, { id }) =>
     res.json(status);
   });
 
+// these state values are not used for anything - just placeholders,
+// because the caller assumes a json return
+const readModelPauseHandler = (req, res, { id }) =>
+  req.resolve.eventBus.pause({ eventSubscriber: id }).then(() => {
+    res.json({ state: 'paused' });
+  });
+
+const readModelResumeHandler = (req, res, { id }) =>
+  req.resolve.eventBus.resume({ eventSubscriber: id }).then(() => {
+    res.json({ state: 'resumed' });
+  });
+
+const readModelResetHandler = (req, res, { id }) =>
+  req.resolve.eventBus
+    .reset({ eventSubscriber: id })
+    .then(() => req.resolve.eventBus.resume({ eventSubscriber: id }))
+    .then(() => {
+      res.json({ state: 'reset' });
+    });
+
 const listPropertiesHandler = (req, res, { id }) =>
   req.resolve.eventBus
     .listProperties({ eventSubscriber: id })
@@ -82,6 +102,9 @@ const commandHandlers = {
   'read-model-status-all': readModelStatusAllHandler,
   'read-model-status': readModelStatusHandler,
   'read-model-query': readModelQueryHandler,
+  'read-model-pause': readModelPauseHandler,
+  'read-model-resume': readModelResumeHandler,
+  'read-model-reset': readModelResetHandler,
   'list-properties': listPropertiesHandler,
   'read-model-show-resolvers': readModelShowResolversHandler,
   'aggregate-list': aggregateListHandler,

@@ -11,6 +11,9 @@ const actions = {
   readModelShowProperties: require('./read-model-show-properties'),
   readModelShowResolvers: require('./read-model-show-resolvers'),
   readModelQuery: require('./read-model-query'),
+  readModelPause: require('./read-model-pause'),
+  readModelResume: require('./read-model-resume'),
+  readModelReset: require('./read-model-reset'),
   config: require('./config'),
   configLoad: require('./config-load'),
   configSave: require('./config-save'),
@@ -52,37 +55,40 @@ const vorpalActions = (state) => {
   return captureActions;
 };
 
-const commanderAction = ({ rootActions }) => (f) =>
+const commanderAction = ({ rootActions, load }) => (f) =>
   function (...args) {
     const [cmd] = args.slice(-1);
-    const params = cmd._args.reduce(
-      (r, v, i) => ({ ...r, [v.name]: args[i] }),
-      {}
-    );
-    params.options = cmd.options.reduce((r, v) => {
-      // for option '-r, --remove', v.short has '-r' and v.long has '--remove'
-      //   value is cmd.remove
-      // for option '-r', v.short is undefined and v.long has '-r'
-      //   value is cmd.R
-      // for option '--remove', v.short is undefined and v.long has '--remove'
-      //   value is cmd.remove
-      const optionName = v.long.replace(/^-+/, '');
-      const shortOption = optionName.length === 1;
-      return {
-        ...r,
-        [optionName]: cmd[shortOption ? optionName.toUpperCase() : optionName],
-      };
-    }, {});
+    const params =
+      cmd._args && Array.isArray(cmd._args)
+        ? cmd._args.reduce((r, v, i) => ({ ...r, [v.name]: args[i] }), {})
+        : {};
+    params.options =
+      cmd.options && Array.isArray(cmd.options)
+        ? cmd.options.reduce((r, v) => {
+            // for option '-r, --remove', v.short has '-r' and v.long has '--remove'
+            //   value is cmd.remove
+            // for option '-r', v.short is undefined and v.long has '-r'
+            //   value is cmd.R
+            // for option '--remove', v.short is undefined and v.long has '--remove'
+            //   value is cmd.remove
+            const optionName = v.long.replace(/^-+/, '');
+            const shortOption = optionName.length === 1;
+            return {
+              ...r,
+              [optionName]:
+                cmd[shortOption ? optionName.toUpperCase() : optionName],
+            };
+          }, {})
+        : {};
 
     // We assume that only one of these top-level actions is
     // run when using the commander interface, so calling this
     // here is fine - otherwise we'd need to make sure somehow
     // that configLoad is done just once.
-    const load = cmd.parent.load;
     return rootActions.configLoad({ name: load }).then(() => f(params));
   };
 
-const commanderActions = (state) => {
+const commanderActions = (state, load) => {
   const captureActions = {};
   for (const key in actions)
     captureActions[key] = actions[key]({ state, rootActions: captureActions })({
@@ -90,9 +96,16 @@ const commanderActions = (state) => {
       prompt: inquirer.prompt,
       actions: captureActions,
     });
+
+  captureActions['runVorpal'] = require('./run-vorpal')(
+    vorpalActions(state),
+    state
+  );
+
   captureActions.commanderAction = commanderAction({
     state,
     rootActions: captureActions,
+    load,
   });
   return captureActions;
 };

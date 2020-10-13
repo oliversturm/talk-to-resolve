@@ -3,27 +3,27 @@ module.exports = (commander, actions) => {
     .command('read-model')
     .alias('rm')
     .alias('readmodel')
-    .alias('r');
+    .alias('r')
+    .description('Read model commands');
 
-  rm.command('status [id]')
+  rm.command('status [id]', { isDefault: true })
     .alias('s')
     .description('Show status of one or all read models')
     .action(actions.commanderAction(actions.readModelStatus));
 
   rm.command('properties <id>')
     .alias('props')
-    .alias('p')
-    .description('Show read model properties')
+    .description('List read model properties')
     .action(actions.commanderAction(actions.readModelShowProperties));
 
   rm.command('resolvers <id>')
     .alias('res')
     .alias('r')
-    .description('Show read model resolvers')
+    .description('List read model resolvers')
     .action(actions.commanderAction(actions.readModelShowResolvers));
 
-  commander
-    .command('rm-query <id> <resolver> [resolverArgsJson...]')
+  rm.command('query <id> <resolver> [resolverArgsJson...]')
+    .alias('q')
     .description('Query a read model')
     .option(
       '-j, --json',
@@ -31,4 +31,16 @@ module.exports = (commander, actions) => {
     )
     .option('-f, --file <file>', 'Save result JSON to file')
     .action(actions.commanderAction(actions.readModelQuery));
+
+  rm.command('pause <id>')
+    .description('Pause a read model')
+    .action(actions.commanderAction(actions.readModelPause));
+
+  rm.command('resume <id>')
+    .description('Resume a read model')
+    .action(actions.commanderAction(actions.readModelResume));
+
+  rm.command('reset <id>')
+    .description('Reset a read model')
+    .action(actions.commanderAction(actions.readModelReset));
 };

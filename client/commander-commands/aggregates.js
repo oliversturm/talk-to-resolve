@@ -1,8 +1,12 @@
 module.exports = (commander, actions) => {
-  const aggregate = commander.command('aggregate').alias('agg').alias('a');
+  const aggregate = commander
+    .command('aggregate')
+    .alias('agg')
+    .alias('a')
+    .description('Aggregate commands');
 
   aggregate
-    .command('list')
+    .command('list', { isDefault: true })
     .alias('l')
     .description('List known aggregates')
     .action(actions.commanderAction(actions.aggregateList));
@@ -17,12 +21,14 @@ module.exports = (commander, actions) => {
   aggregate
     .command('exec <aggregateName> <aggregateId> <command> <payloadJson...>')
     .alias('x')
+    .alias('ex')
     .description('Execute aggregate command')
     .action(actions.commanderAction(actions.aggregateExecuteCommand));
 
   aggregate
     .command('exec-file <fileName>')
     .alias('xf')
+    .alias('exf')
     .description('Execute aggregate commands from a file')
     .option('-l, --last <number>', 'Execute only the last <number> items')
     .option('-s, --skip <number>', 'Skip <number> commands from the start')
