@@ -16,6 +16,28 @@ module.exports = (commander, actions) => {
     .description('List read model properties')
     .action(actions.commanderAction(actions.readModelShowProperties));
 
+  const property = rm
+    .command('property')
+    .alias('prop')
+    .description('Property commands');
+
+  property
+    .command('set <readModelName> <propertyName> <value>')
+    .alias('s')
+    .description('Set a property for the given read model')
+    .action(actions.commanderAction(actions.readModelSetProperty));
+
+  property
+    .command('get <readModelName> <propertyName>')
+    .alias('g')
+    .description('Get the value of a property for the given read model')
+    .action(actions.commanderAction(actions.readModelGetProperty));
+
+  property
+    .command('delete <readModelName> <propertyName>')
+    .description('Delete a property from the given read model')
+    .action(actions.commanderAction(actions.readModelDeleteProperty));
+
   rm.command('resolvers <id>')
     .alias('res')
     .alias('r')

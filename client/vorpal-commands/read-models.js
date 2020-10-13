@@ -4,11 +4,11 @@ module.exports = (vorpal, actions) => {
     .action(actions.vorpalAction(actions.readModelStatus));
 
   vorpal
-    .command('read-model show properties <id>', 'List read model properties')
+    .command('read-model list properties <id>', 'List read model properties')
     .action(actions.vorpalAction(actions.readModelShowProperties));
 
   vorpal
-    .command('read-model show resolvers <id>', 'List read model resolvers')
+    .command('read-model list resolvers <id>', 'List read model resolvers')
     .action(actions.vorpalAction(actions.readModelShowResolvers));
 
   vorpal
@@ -34,4 +34,25 @@ module.exports = (vorpal, actions) => {
   vorpal
     .command('read-model reset <id>', 'Reset a read model')
     .action(actions.vorpalAction(actions.readModelReset));
+
+  vorpal
+    .command(
+      'read-model set property <readModelName> <propertyName> <value>',
+      'Set a property for the given read model'
+    )
+    .action(actions.vorpalAction(actions.readModelSetProperty));
+
+  vorpal
+    .command(
+      'read-model get property <readModelName> <propertyName>',
+      'Get the value of a property for the given read model'
+    )
+    .action(actions.vorpalAction(actions.readModelGetProperty));
+
+  vorpal
+    .command(
+      'read-model delete property <readModelName> <propertyName>',
+      'Delete a property from the given read model'
+    )
+    .action(actions.vorpalAction(actions.readModelDeleteProperty));
 };

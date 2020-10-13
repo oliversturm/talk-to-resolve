@@ -1,14 +1,14 @@
-const readModelShowProperties = () => ({
+const readModelGetProperty = () => ({
   output,
   actions: { contactService, createTable },
-}) => ({ id }) =>
-  contactService({ command: 'list-properties', id }).then((json) => {
+}) => ({ readModelName, propertyName }) =>
+  contactService({
+    command: 'read-model-get-property',
+    readModelName,
+    propertyName,
+  }).then((json) => {
     if (json) {
-      const data = Object.keys(json).reduce(
-        (r, v) => [...r, { name: v, value: json[v] }],
-        []
-      );
-      const table = createTable(data, [
+      const table = createTable(json, [
         { name: 'name', width: 40 },
         {
           name: 'value',
@@ -23,4 +23,4 @@ const readModelShowProperties = () => ({
     }
   });
 
-module.exports = readModelShowProperties;
+module.exports = readModelGetProperty;

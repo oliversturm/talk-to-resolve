@@ -41,6 +41,43 @@ const listPropertiesHandler = (req, res, { id }) =>
       res.json(status);
     });
 
+const readModelGetPropertyHandler = (
+  req,
+  res,
+  { readModelName, propertyName }
+) =>
+  req.resolve.eventBus
+    .getProperty({ eventSubscriber: readModelName, key: propertyName })
+    .then((value) => {
+      res.json({ name: propertyName, value });
+    });
+
+const readModelSetPropertyHandler = (
+  req,
+  res,
+  { readModelName, propertyName, value }
+) =>
+  req.resolve.eventBus
+    .setProperty({
+      eventSubscriber: readModelName,
+      key: String(propertyName),
+      value: String(value),
+    })
+    .then(() => {
+      res.json({ state: 'prop-set' });
+    });
+
+const readModelDeletePropertyHandler = (
+  req,
+  res,
+  { readModelName, propertyName }
+) =>
+  req.resolve.eventBus
+    .deleteProperty({ eventSubscriber: readModelName, key: propertyName })
+    .then(() => {
+      res.json({ state: 'prop-deleted' });
+    });
+
 const readModelQueryHandler = (req, res, { id, resolver, resolverArgs }) =>
   req.resolve
     .executeQuery({
@@ -110,6 +147,9 @@ const commandHandlers = {
   'aggregate-list': aggregateListHandler,
   'aggregate-list-commands': aggregateListCommandsHandler,
   'events-load': eventsLoadHandler,
+  'read-model-get-property': readModelGetPropertyHandler,
+  'read-model-set-property': readModelSetPropertyHandler,
+  'read-model-delete-property': readModelDeletePropertyHandler,
 };
 
 const handler = (req, res, validateJwt) => {
