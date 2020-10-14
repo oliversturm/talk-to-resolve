@@ -6,6 +6,7 @@ const path = require('path');
 const pack = require(path.join(__dirname, '/../package.json'));
 const addCommanderReadModelCommands = require('./commander-commands/read-models');
 const addCommanderAggregateCommands = require('./commander-commands/aggregates');
+const addCommanderViewModelCommands = require('./commander-commands/view-models');
 const addCommanderEventCommands = require('./commander-commands/events');
 const addCommanderVorpalCommand = require('./commander-commands/vorpal');
 
@@ -23,6 +24,7 @@ const actions = commanderActions(state, commander.load);
 
 addCommanderReadModelCommands(commander, actions);
 addCommanderAggregateCommands(commander, actions);
+addCommanderViewModelCommands(commander, actions);
 addCommanderEventCommands(commander, actions);
 addCommanderVorpalCommand(commander, actions);
 

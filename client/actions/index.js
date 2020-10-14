@@ -28,6 +28,7 @@ const actions = {
   aggregateExecuteCommand: require('./aggregate-execute-command'),
   aggregateExecuteCommands: require('./aggregate-execute-commands'),
   eventsShow: require('./events-show'),
+  viewModelQuery: require('./view-model-query'),
 };
 
 const vorpalAction = ({ rootActions }) => (f) =>

@@ -3,6 +3,7 @@ const runVorpal = (actions, state) => () => {
   const configCommands = require('../vorpal-commands/config');
   const readModelCommands = require('../vorpal-commands/read-models');
   const aggregateCommands = require('../vorpal-commands/aggregates');
+  const viewModelCommands = require('../vorpal-commands/view-models');
   const eventCommands = require('../vorpal-commands/events');
 
   vorpal
@@ -10,6 +11,7 @@ const runVorpal = (actions, state) => () => {
     .use(configCommands, actions)
     .use(readModelCommands, actions)
     .use(aggregateCommands, actions)
+    .use(viewModelCommands, actions)
     .use(eventCommands, actions)
     .delimiter(state.prompt());
 

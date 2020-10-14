@@ -135,6 +135,17 @@ const eventsLoadHandler = (
       res.json(events);
     });
 
+const viewModelQueryHandler = (req, res, { viewModelName, aggregateIds }) =>
+  req.resolve
+    .executeQuery({
+      modelName: viewModelName,
+      aggregateIds,
+      jwt: req.jwt,
+    })
+    .then((result) => {
+      res.json(result);
+    });
+
 const commandHandlers = {
   'read-model-status-all': readModelStatusAllHandler,
   'read-model-status': readModelStatusHandler,
@@ -150,6 +161,7 @@ const commandHandlers = {
   'read-model-get-property': readModelGetPropertyHandler,
   'read-model-set-property': readModelSetPropertyHandler,
   'read-model-delete-property': readModelDeletePropertyHandler,
+  'view-model-query': viewModelQueryHandler,
 };
 
 const handler = (req, res, validateJwt) => {
