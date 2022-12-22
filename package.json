@@ -32,7 +32,7 @@
     "inquirer": "^7.0.0",
     "isomorphic-fetch": "^2.2.1",
     "jsonic": "^0.3.1",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "lodash": "^4.17.15",
     "table": "^5.4.6",
     "vorpal": "^1.12.0"
